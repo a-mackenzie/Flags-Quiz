@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Flags Quiz</string>
+
+    <string name="header">Flags\nQuiz</string>
+    <string name="submitAnswers">Submit Answers</string>
+    <string name="toastMessage">%s/11 correct!</string>
+
+    <!-- These are the question strings -->
+    <string name="question1">1. This is the flag of which country?</string>
+    <string name="question2">2. Which 3 of these colours feature in the Norwegian flag?</string>
+    <string name="question3">3. This is the flag of which country?</string>
+    <string name="question4">4. How many stars are on the Australian flag?</string>
+    <string name="question4hint">Enter your answer in digits (e.g. 10)</string>
+    <string name="question5">5. Which of these is the correct flag of South Africa?</string>
+    <string name="question6">6. Which 2 of these countries have identical flags?</string>
+    <string name="question7">7. Which is the only country to have a 5 sided flag?</string>
+    <string name="question7hint">Enter your answer here (e.g. France)</string>
+    <string name="question8">8. This is the flag of which country?</string>
+    <string name="question9">9. Which of these is the correct flag of Panama?</string>
+    <string name="question10">10. Which two countries have square flags?</string>
+    <string name="question10hint1">Enter your first answer here (e.g. France)</string>
+    <string name="question10hint2">Enter your second answer here (e.g. France)</string>
+
+    <!-- These are the strings for the answers to Question 1 -->
+    <string name="slovakia">Slovakia</string>
+    <string name="slovenia">Slovenia</string>
+    <string name="croatia">Croatia</string>
+    <string name="serbia">Serbia</string>
+
+    <!-- These are the strings for the answers to Question 2 -->
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="white">White</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+
+    <!-- These are the strings for the answers to Question 3 -->
+    <string name="ivoryCoast">Ivory Coast</string>
+    <string name="ireland">Ireland</string>
+    <string name="italy">Italy</string>
+    <string name="isreal">Isreal</string>
+
+    <!-- These are the strings for the answers to Question 4 -->
+    <string name="q4correctanswer">6</string>
+
+    <!-- These are the strings for the answers to Questions 5 and 9 -->
+    <string name="optionA">A</string>
+    <string name="optionB">B</string>
+    <string name="optionC">C</string>
+    <string name="optionD">D</string>
+
+    <!-- These are the strings for the answers to Question 6 -->
+    <string name="chad">Chad</string>
+    <string name="colombia">Colombia</string>
+    <string name="moldova">Moldova</string>
+    <string name="romania">Romania</string>
+
+    <!-- These are the strings for the answers to Question 7 -->
+    <string name="q7correctanswer">Nepal</string>
+
+    <!-- These are the strings for the answers to Question 8 -->
+    <string name="netherlands">Netherlands</string>
+    <string name="russia">Russia</string>
+    <string name="france">France</string>
+    <string name="czech">Czech Republic</string>
+
+    <!-- These are the strings for the answers to Question 10 -->
+    <string name="q10answer1">Switzerland</string>
+    <string name="q10answer2">Vatican City</string>
+    
+</resources>
