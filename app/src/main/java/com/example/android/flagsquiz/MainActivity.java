@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView q10Image;
     TextView resultScore;
     TextView resultsMessage;
+    View dialogView;
 
 
     @Override
@@ -101,10 +103,12 @@ public class MainActivity extends AppCompatActivity {
         q10Image = findViewById(R.id.q10Image);
 
         LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View v = inflater.inflate(R.layout.results_dialog, null);
-        resultScore = v.findViewById(R.id.resultScore);
-        resultsMessage = v.findViewById(R.id.resultsMessage);
+        dialogView = inflater.inflate(R.layout.results_dialog, null);
+        resultScore = dialogView.findViewById(R.id.resultScore);
+        resultsMessage = dialogView.findViewById(R.id.resultsMessage);
+
     }
+
 
     /**
      * Checks all answers and displays a toast with the results of the quiz
@@ -139,11 +143,10 @@ public class MainActivity extends AppCompatActivity {
         resultScore.setText(scoreString2);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        LayoutInflater inflater = MainActivity.this.getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.results_dialog, null));
-        builder.setView(R.layout.results_dialog)
+        builder.setView(dialogView)
                 .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
                     }
                 });
         builder.show();
