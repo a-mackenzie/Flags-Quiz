@@ -122,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
+        q1Layout.getBackground();
+        savedInstanceState.putInt("q1Layout", q1Layout.getBackground());
 
     }
 
