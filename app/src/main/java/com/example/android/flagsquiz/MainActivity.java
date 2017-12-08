@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     TextView resultScore;
     TextView resultsMessage;
     View dialogView;
+    AlertDialog.Builder builder;
 
 
     @Override
@@ -107,11 +108,16 @@ public class MainActivity extends AppCompatActivity {
         resultScore = dialogView.findViewById(R.id.resultScore);
         resultsMessage = dialogView.findViewById(R.id.resultsMessage);
 
+        builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setView(dialogView)
+                .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
     }
 
-
     /**
-     * Checks all answers and displays a toast with the results of the quiz
+     * Checks all answers and displays a dialog with the results of the quiz
      */
     public void checkResults(View view) {
         score = 0;
@@ -142,13 +148,6 @@ public class MainActivity extends AppCompatActivity {
         String scoreString2 = getString(R.string.resultScore, scoreString);
         resultScore.setText(scoreString2);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setView(dialogView)
-                .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
         builder.show();
     }
 
