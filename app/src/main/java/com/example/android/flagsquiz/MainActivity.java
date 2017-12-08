@@ -117,6 +117,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Saves the state of the question layouts when changing rotation
+     */
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+    }
+
+    /**
      * Checks all answers and displays a dialog with the results of the quiz
      */
     public void checkResults(View view) {

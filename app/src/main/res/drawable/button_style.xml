@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle" >
+            <!-- View border color and width -->
+            <stroke
+                android:width="@dimen/questionBorderWidth"
+                android:color="@color/lightBlue" >
+            </stroke>
+            <solid
+                android:color="@color/darkBlue">
+            </solid>
+            <corners
+                android:radius="@dimen/questionBorderRadius">
+            </corners>
+        </shape>
+
+    </item>
+
+</layer-list>
