@@ -503,6 +503,16 @@ public class MainActivity extends AppCompatActivity {
         q6Image.setImageDrawable(getResources().getDrawable(R.drawable.romania_chad));
         q7Image.setImageDrawable(getResources().getDrawable(R.drawable.nepal));
         q10Image.setImageDrawable(getResources().getDrawable(R.drawable.vatican_swiss));
+        q1LayoutState = 1;
+        q2LayoutState = 1;
+        q3LayoutState = 1;
+        q4LayoutState = 1;
+        q5LayoutState = 1;
+        q6LayoutState = 1;
+        q7LayoutState = 1;
+        q8LayoutState = 1;
+        q9LayoutState = 1;
+        q10LayoutState = 1;
     }
 
     /**
