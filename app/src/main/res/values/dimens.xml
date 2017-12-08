@@ -6,11 +6,16 @@
     <dimen name="questionBoxMarginVertical">8dp</dimen>
     <dimen name="questionBoxPadding">16dp</dimen>
     <dimen name="questionPadding">8dp</dimen>
-    <dimen name="multiImagePadding">4dp</dimen>
-    <dimen name="landscapeLayoutMargin">96dp</dimen>
-    <dimen name="landscapeHeaderMargin">112dp</dimen>
     <dimen name="questionBorderRadius">8dp</dimen>
     <dimen name="questionBorderWidth">4dp</dimen>
+
+    <dimen name="resetButtonMarginBottom">16dp</dimen>
+
+    <dimen name="multiImagePadding">4dp</dimen>
+
+    <dimen name="landscapeLayoutMargin">96dp</dimen>
+    <dimen name="landscapeHeaderMargin">112dp</dimen>
+
     <dimen name="dialogMargin">16dp</dimen>
 
 </resources>

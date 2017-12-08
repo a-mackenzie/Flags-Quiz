@@ -7,17 +7,13 @@
     android:background="@drawable/allflags"
     tools:context="com.example.android.flagsquiz.MainActivity">
 
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
         android:layout_marginVertical="@dimen/questionBoxMarginVertical"
-        android:padding="@dimen/questionBoxPadding"
-        android:background="@drawable/header_border"
-        android:gravity="center"
-        android:text="@string/header"
-        android:textAppearance="@style/headerFont"/>
+        android:src="@drawable/header_transparent"
+        android:adjustViewBounds="true"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -711,6 +707,7 @@
                 android:onClick="checkResults" />
 
             <Button
+                android:id="@+id/cheatButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -721,14 +718,16 @@
                 android:onClick="showCorrectAnswers"/>
 
             <Button
+                android:id="@+id/resetButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
-                android:layout_marginVertical="@dimen/questionBoxMarginVertical"
+                android:layout_marginTop="@dimen/questionBoxMarginVertical"
+                android:layout_marginBottom="@dimen/resetButtonMarginBottom"
                 android:background="@drawable/button_style"
                 android:text="@string/reset"
                 android:textAppearance="@style/buttonFont"
-                android:onClick="resetAll"/>
+                android:onClick="resetAllButton"/>
 
         </LinearLayout>
 

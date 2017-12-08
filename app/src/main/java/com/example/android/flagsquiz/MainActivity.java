@@ -53,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
     View q8Layout;
     View q9Layout;
     View q10Layout;
+    int q1LayoutState;
+    int q2LayoutState;
+    int q3LayoutState;
+    int q4LayoutState;
+    int q5LayoutState;
+    int q6LayoutState;
+    int q7LayoutState;
+    int q8LayoutState;
+    int q9LayoutState;
+    int q10LayoutState;
     ImageView q2Image;
     ImageView q4Image;
     ImageView q6Image;
@@ -62,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
     TextView resultsMessage;
     View dialogView;
     AlertDialog.Builder builder;
+    AlertDialog resultsDialog;
+    View cheatView;
+    AlertDialog cheatDialog;
+    View resetView;
+    AlertDialog resetDialog;
 
 
     @Override
@@ -112,19 +127,138 @@ public class MainActivity extends AppCompatActivity {
         builder.setView(dialogView)
                 .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        resultsDialog.dismiss();
                     }
                 });
+        resultsDialog = builder.create();
+
+        cheatView = inflater.inflate(R.layout.cheat_dialog, null);
+        builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setView(cheatView)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        cheatDialog.dismiss();
+                        setCorrectAnswers();
+                    }
+                })
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        cheatDialog.dismiss();
+                    }
+                });
+        cheatDialog = builder.create();
+
+        resetView = inflater.inflate(R.layout.reset_dialog, null);
+        builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setView(resetView)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        resetDialog.dismiss();
+                        resetAll();
+                    }
+                })
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        resetDialog.dismiss();
+                    }
+                });
+        resetDialog = builder.create();
     }
 
     /**
-     * Saves the state of the question layouts when changing rotation
+     * Saves the state of the app
      */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        q1Layout.getBackground();
-        savedInstanceState.putInt("q1Layout", q1Layout.getBackground());
+        savedInstanceState.putInt("q1LayoutState", q1LayoutState);
+        savedInstanceState.putInt("q2LayoutState", q2LayoutState);
+        savedInstanceState.putInt("q3LayoutState", q3LayoutState);
+        savedInstanceState.putInt("q4LayoutState", q4LayoutState);
+        savedInstanceState.putInt("q5LayoutState", q5LayoutState);
+        savedInstanceState.putInt("q6LayoutState", q6LayoutState);
+        savedInstanceState.putInt("q7LayoutState", q7LayoutState);
+        savedInstanceState.putInt("q8LayoutState", q8LayoutState);
+        savedInstanceState.putInt("q9LayoutState", q9LayoutState);
+        savedInstanceState.putInt("q10LayoutState", q10LayoutState);
+        super.onSaveInstanceState(savedInstanceState);
+    }
 
+    /**
+     * Restores the state of the app
+     */
+    @Override
+    public void onRestoreInstanceState(Bundle saveInstanceState) {
+        super.onRestoreInstanceState(saveInstanceState);
+        if (saveInstanceState != null) {
+            q1LayoutState = saveInstanceState.getInt("q1LayoutState");
+            q2LayoutState = saveInstanceState.getInt("q2LayoutState");
+            q3LayoutState = saveInstanceState.getInt("q3LayoutState");
+            q4LayoutState = saveInstanceState.getInt("q4LayoutState");
+            q5LayoutState = saveInstanceState.getInt("q5LayoutState");
+            q6LayoutState = saveInstanceState.getInt("q6LayoutState");
+            q7LayoutState = saveInstanceState.getInt("q7LayoutState");
+            q8LayoutState = saveInstanceState.getInt("q8LayoutState");
+            q9LayoutState = saveInstanceState.getInt("q9LayoutState");
+            q10LayoutState = saveInstanceState.getInt("q10LayoutState");
+        }
+        if (q1LayoutState == 1) {
+            q1Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+        } else if (q1LayoutState == 2) {
+            q1Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q2LayoutState == 1) {
+            q2Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q2Image.setImageDrawable(getResources().getDrawable(R.drawable.norway));
+        } else if (q2LayoutState == 2) {
+            q2Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q3LayoutState == 1) {
+            q3Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+        } else if (q3LayoutState == 2) {
+            q3Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q4LayoutState == 1) {
+            q4Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q4Image.setImageDrawable(getResources().getDrawable(R.drawable.australia));
+        } else if (q4LayoutState == 2) {
+            q4Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q5LayoutState == 1) {
+            q5Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+        } else if (q5LayoutState == 2) {
+            q5Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q6LayoutState == 1) {
+            q6Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q6Image.setImageDrawable(getResources().getDrawable(R.drawable.romania_chad));
+        } else if (q6LayoutState == 2) {
+            q6Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q7LayoutState == 1) {
+            q7Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q7Image.setImageDrawable(getResources().getDrawable(R.drawable.nepal));
+        } else if (q7LayoutState == 2) {
+            q7Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q8LayoutState == 1) {
+            q8Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+        } else if (q8LayoutState == 2) {
+            q8Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q9LayoutState == 1) {
+            q9Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+        } else if (q9LayoutState == 2) {
+            q9Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
+        if (q10LayoutState == 1) {
+            q10Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q10Image.setImageDrawable(getResources().getDrawable(R.drawable.vatican_swiss));
+        } else if (q10LayoutState == 2) {
+            q10Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+        }
     }
 
     /**
@@ -159,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
         String scoreString2 = getString(R.string.resultScore, scoreString);
         resultScore.setText(scoreString2);
 
-        builder.show();
+        resultsDialog.show();
     }
 
     /**
@@ -169,8 +303,10 @@ public class MainActivity extends AppCompatActivity {
         if (q1Slovenia.isChecked()) {
             score += 1;
             q1Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q1LayoutState = 1;
         } else {
             q1Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q1LayoutState = 2;
         }
         return score;
     }
@@ -183,8 +319,10 @@ public class MainActivity extends AppCompatActivity {
             score += 1;
             q2Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
             q2Image.setImageDrawable(getResources().getDrawable(R.drawable.norway));
+            q2LayoutState = 1;
         } else {
             q2Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q2LayoutState = 2;
         }
         return score;
     }
@@ -196,8 +334,10 @@ public class MainActivity extends AppCompatActivity {
         if (q3IvoryCoast.isChecked()) {
             score += 1;
             q3Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q3LayoutState = 1;
         } else {
             q3Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q3LayoutState = 2;
         }
         return score;
     }
@@ -211,8 +351,10 @@ public class MainActivity extends AppCompatActivity {
             score += 1;
             q4Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
             q4Image.setImageDrawable(getResources().getDrawable(R.drawable.australia));
+            q4LayoutState = 1;
         } else {
             q4Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q4LayoutState = 2;
         }
         return score;
     }
@@ -224,8 +366,10 @@ public class MainActivity extends AppCompatActivity {
         if (q5AnswerD.isChecked()) {
             score += 1;
             q5Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q5LayoutState = 1;
         } else {
             q5Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q5LayoutState = 2;
         }
         return score;
     }
@@ -238,8 +382,10 @@ public class MainActivity extends AppCompatActivity {
             score += 1;
             q6Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
             q6Image.setImageDrawable(getResources().getDrawable(R.drawable.romania_chad));
+            q6LayoutState = 1;
         } else {
             q6Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q6LayoutState = 2;
         }
         return score;
     }
@@ -253,8 +399,10 @@ public class MainActivity extends AppCompatActivity {
             score += 1;
             q7Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
             q7Image.setImageDrawable(getResources().getDrawable(R.drawable.nepal));
+            q7LayoutState = 1;
         } else {
             q7Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q7LayoutState = 2;
         }
         return score;
     }
@@ -266,8 +414,10 @@ public class MainActivity extends AppCompatActivity {
         if (q8netherlands.isChecked()) {
             score += 1;
             q8Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q8LayoutState = 1;
         } else {
             q8Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q8LayoutState = 2;
         }
         return score;
     }
@@ -279,8 +429,10 @@ public class MainActivity extends AppCompatActivity {
         if (q9AnswerB.isChecked()) {
             score += 1;
             q9Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
+            q9LayoutState = 1;
         } else {
             q9Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q9LayoutState = 2;
         }
         return score;
     }
@@ -306,8 +458,10 @@ public class MainActivity extends AppCompatActivity {
         if ((q10AnswerA.equalsIgnoreCase(getResources().getString(R.string.q10answer1)) && q10AnswerB.equalsIgnoreCase(getResources().getString(R.string.q10answer2))) || (q10AnswerA.equalsIgnoreCase(getResources().getString(R.string.q10answer2)) && q10AnswerB.equalsIgnoreCase(getResources().getString(R.string.q10answer1)))) {
             q10Layout.setBackground(getResources().getDrawable(R.drawable.question_border_correct));
             q10Image.setImageDrawable(getResources().getDrawable(R.drawable.vatican_swiss));
+            q10LayoutState = 1;
         } else {
             q10Layout.setBackground(getResources().getDrawable(R.drawable.question_border_incorrect));
+            q10LayoutState = 2;
         }
         return score;
     }
@@ -315,7 +469,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This methods sets all the answers to the correct ones
      */
-    public void showCorrectAnswers (View view) {
+    public void setCorrectAnswers () {
         q1Slovenia.setChecked(true);
         q2Blue.setChecked(true);
         q2Red.setChecked(true);
@@ -352,14 +506,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * This method calls the Reveal Answers dialog
+     */
+    public void showCorrectAnswers(View view) {
+        cheatDialog.show();
+    }
+
+    /**
      * This methods resets the app
      */
-    public void resetAll (View view) {
+    public void resetAll () {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
         overridePendingTransition(0, 0);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+    }
+
+    /**
+     * This method calls the Reset dialog
+     */
+    public void resetAllButton(View view) {
+        resetDialog.show();
     }
 
 }

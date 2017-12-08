@@ -1,19 +1,26 @@
 <resources>
     <string name="app_name">Flags Quiz</string>
 
-    <string name="header">Flags Quiz</string>
+    <!-- These strings are used in the dialog messages for the buttons -->
     <string name="submitAnswers">Submit Answers</string>
     <string name="giveUp">I give up! Show me the answers!</string>
     <string name="reset">Reset All</string>
+
+    <!-- These strings are used in the dialog messages -->
     <string name="results">Results</string>
     <string name="resultScore">%s/11</string>
     <string name="resultsMessage">Generic results message</string>
     <string name="okay">OK</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
     <string name="score0">Awful! You really know nothing about flags!</string>
     <string name="score1to3">Poor! You clearly need to read more about flags!</string>
     <string name="score4to6">Average! Not bad, but must try harder!</string>
     <string name="score7to10">Nice! Great flag knowledge on display!</string>
     <string name="score11">Amazing! You really are the flag master!</string>
+    <string name="cheat">Cheater!</string>
+    <string name="cheatMessage">Are you sure you want to reveal all the correct answers?</string>
+    <string name="resetMessage">Are you sure you want to reset everything?</string>
 
     <!-- These are the question strings -->
     <string name="question1">1. This is the flag of which country?</string>
