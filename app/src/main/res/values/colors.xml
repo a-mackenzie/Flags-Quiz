@@ -2,7 +2,14 @@
 <resources>
     <color name="colorPrimary">#607D8B</color>
     <color name="colorPrimaryDark">#455A64</color>
-    <color name="colorAccent">#9E9E9E</color>
-    <color name="questionBorder">#0D47A1</color>
-    <color name="questionBackground">#BBDEFB</color>
+    <color name="colorAccent">#0D47A1</color>
+
+    <color name="darkBlue">#0D47A1</color>
+    <color name="lightBlueTransparent">#E6BBDEFB</color>
+    <color name="lightBlue">#BBDEFB</color>
+    <color name="darkGreen">#4CAF50</color>
+    <color name="lightGreenTransparent">#E6C8E6C9</color>
+    <color name="darkRed">#F44336</color>
+    <color name="lightRedTransparent">#E6FFCDD2</color>
+    <color name="transparentWhite">#80FFFFFF</color>
 </resources>

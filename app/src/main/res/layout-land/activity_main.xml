@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/allflags"
     tools:context="com.example.android.flagsquiz.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/landscapeLayoutPadding"
+        android:layout_marginHorizontal="@dimen/landscapeLayoutMargin"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
             android:layout_marginVertical="@dimen/questionBoxMarginVertical"
             android:padding="@dimen/questionBoxPadding"
-            android:background="@drawable/question_border"
-            android:gravity="center_horizontal"
+            android:background="@drawable/header_border"
+            android:gravity="center"
             android:text="@string/header"
             android:textAppearance="@style/headerFont"/>
 
         <LinearLayout
+            android:id="@+id/q1Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -82,6 +84,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q2Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -91,6 +94,7 @@
             android:background="@drawable/question_border">
 
             <ImageView
+                android:id="@+id/q2Image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -141,6 +145,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q3Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -199,6 +204,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q4Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -208,6 +214,7 @@
             android:background="@drawable/question_border">
 
             <ImageView
+                android:id="@+id/q4Image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -230,6 +237,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q5Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -365,6 +373,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q6Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -374,6 +383,7 @@
             android:background="@drawable/question_border">
 
             <ImageView
+                android:id="@+id/q6Image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -417,6 +427,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q7Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -426,8 +437,10 @@
             android:background="@drawable/question_border">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:id="@+id/q7Image"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:adjustViewBounds="true"
                 android:src="@drawable/questionmark"/>
 
@@ -448,6 +461,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q8Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -506,6 +520,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q9Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -641,6 +656,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/q10Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
@@ -650,6 +666,7 @@
             android:background="@drawable/question_border">
 
             <ImageView
+                android:id="@+id/q10Image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -683,8 +700,30 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
             android:layout_marginVertical="@dimen/questionBoxMarginVertical"
+            android:background="@drawable/button_style"
             android:text="@string/submitAnswers"
+            android:textAppearance="@style/buttonFont"
             android:onClick="checkResults"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
+            android:layout_marginVertical="@dimen/questionBoxMarginVertical"
+            android:background="@drawable/button_style"
+            android:text="@string/giveUp"
+            android:textAppearance="@style/buttonFont"
+            android:onClick="showCorrectAnswers"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/questionBoxMarginHorizontal"
+            android:layout_marginVertical="@dimen/questionBoxMarginVertical"
+            android:background="@drawable/button_style"
+            android:text="@string/reset"
+            android:textAppearance="@style/buttonFont"
+            android:onClick="resetAll"/>
 
     </LinearLayout>
 

@@ -1,9 +1,19 @@
 <resources>
     <string name="app_name">Flags Quiz</string>
 
-    <string name="header">Flags\nQuiz</string>
+    <string name="header">Flags Quiz</string>
     <string name="submitAnswers">Submit Answers</string>
-    <string name="toastMessage">%s/11 correct!</string>
+    <string name="giveUp">I give up! Show me the answers!</string>
+    <string name="reset">Reset All</string>
+    <string name="results">Results</string>
+    <string name="resultScore">%s/11</string>
+    <string name="resultsMessage">Generic results message</string>
+    <string name="okay">OK</string>
+    <string name="score0">Awful! You really know nothing about flags!</string>
+    <string name="score1to3">Poor! You clearly need to read more about flags!</string>
+    <string name="score4to6">Average! Not bad, but must try harder!</string>
+    <string name="score7to10">Nice! Great flag knowledge on display!</string>
+    <string name="score11">Amazing! You really are the flag master!</string>
 
     <!-- These are the question strings -->
     <string name="question1">1. This is the flag of which country?</string>

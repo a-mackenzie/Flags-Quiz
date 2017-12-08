@@ -4,13 +4,13 @@
 
     <!-- View background color -->
     <solid
-        android:color="@color/questionBackground" >
+        android:color="@color/lightBlueTransparent">
     </solid>
 
     <!-- View border color and width -->
     <stroke
         android:width="@dimen/questionBorderWidth"
-        android:color="@color/questionBorder" >
+        android:color="@color/darkBlue" >
     </stroke>
 
     <!-- The radius makes the corners rounded -->
