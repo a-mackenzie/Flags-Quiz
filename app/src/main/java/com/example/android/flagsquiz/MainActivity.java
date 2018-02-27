@@ -26,58 +26,23 @@ public class MainActivity extends AppCompatActivity {
     int score;
 
     RadioButton q1Slovenia;
-    CheckBox q2Blue;
-    CheckBox q2Green;
-    CheckBox q2Red;
-    CheckBox q2Yellow;
-    CheckBox q2White;
+    CheckBox q2Blue, q2Green, q2Red, q2Yellow, q2White;
     RadioButton q3IvoryCoast;
     EditText q4AnswerField;
     RadioButton q5AnswerD;
-    CheckBox q6Chad;
-    CheckBox q6Colombia;
-    CheckBox q6Moldova;
-    CheckBox q6Romania;
+    CheckBox q6Chad, q6Colombia, q6Moldova, q6Romania;
     EditText q7AnswerField;
     RadioButton q8netherlands;
     RadioButton q9AnswerB;
     EditText q10AnswerFieldA;
     EditText q10AnswerFieldB;
-    View q1Layout;
-    View q2Layout;
-    View q3Layout;
-    View q4Layout;
-    View q5Layout;
-    View q6Layout;
-    View q7Layout;
-    View q8Layout;
-    View q9Layout;
-    View q10Layout;
-    int q1LayoutState;
-    int q2LayoutState;
-    int q3LayoutState;
-    int q4LayoutState;
-    int q5LayoutState;
-    int q6LayoutState;
-    int q7LayoutState;
-    int q8LayoutState;
-    int q9LayoutState;
-    int q10LayoutState;
-    ImageView q2Image;
-    ImageView q4Image;
-    ImageView q6Image;
-    ImageView q7Image;
-    ImageView q10Image;
-    TextView resultScore;
-    TextView resultsMessage;
-    View dialogView;
+    View q1Layout, q2Layout, q3Layout, q4Layout, q5Layout, q6Layout, q7Layout, q8Layout, q9Layout, q10Layout;
+    int q1LayoutState, q2LayoutState, q3LayoutState, q4LayoutState, q5LayoutState, q6LayoutState, q7LayoutState, q8LayoutState, q9LayoutState, q10LayoutState;
+    ImageView q2Image, q4Image, q6Image, q7Image, q10Image;
+    TextView resultScore, resultsMessage;
+    View dialogView, cheatView, resetView;
     AlertDialog.Builder builder;
-    AlertDialog resultsDialog;
-    View cheatView;
-    AlertDialog cheatDialog;
-    View resetView;
-    AlertDialog resetDialog;
-
+    AlertDialog resultsDialog, cheatDialog, resetDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -293,6 +258,8 @@ public class MainActivity extends AppCompatActivity {
         String scoreString2 = getString(R.string.resultScore, scoreString);
         resultScore.setText(scoreString2);
 
+        Toast resultsToast = Toast.makeText(this, scoreString2, Toast.LENGTH_SHORT);
+        resultsToast.show();
         resultsDialog.show();
     }
 
